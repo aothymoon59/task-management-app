@@ -21,7 +21,7 @@ const TaskCard = ({ task }) => {
                 </div>
             </div>
             {/* description  */}
-            <div className="flex items-center gap-2 justify-between">
+            <div className="flex items-center gap-2 justify-between mb-3">
                 <div className="flex items-center gap-1 w-[70%]">
                     <div>
                         <FaLayerGroup className="text-sm" />

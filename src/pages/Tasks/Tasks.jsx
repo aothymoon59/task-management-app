@@ -18,7 +18,7 @@ const Tasks = () => {
     const overdatedTasks = tasks.filter(item => item.status === "Overdated")
 
     return (
-        <div className="overflow-x-auto overflow-y-hidden h-[calc(100vh-40px)] border m-5">
+        <div className="scrollbar-x-custom overflow-y-hidden h-[calc(100vh-40px)] border m-5">
             <div className="flex flex-nowrap gap-4 p-5">
                 {/* Incomplete tasks  */}
                 <div className="tasks-column">
