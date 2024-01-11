@@ -3,11 +3,11 @@
 @tailwind utilities;
 
 .tasks-column {
-    @apply w-full min-w-[320px] bg-[#F2F4F7] p-2 h-[1000px] overflow-y-auto
+    @apply w-full min-w-[320px] overflow-y-auto max-h-[calc(100vh-80px)] relative
 }
 
 .task-column-header {
-    @apply bg-[#F2F4F7] flex justify-between rounded-md mb-5
+    @apply bg-[#F2F4F7] flex justify-between rounded-md sticky top-0 z-10 px-2 pt-3 pb-6
 }
 
 .task-count {

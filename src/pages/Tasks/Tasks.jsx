@@ -18,7 +18,7 @@ const Tasks = () => {
     const overdatedTasks = tasks.filter(item => item.status === "Overdated")
 
     return (
-        <div className="overflow-x-auto h-[calc(100vh-40px)] border m-5">
+        <div className="overflow-x-auto overflow-y-hidden h-[calc(100vh-40px)] border m-5">
             <div className="flex flex-nowrap gap-4 p-5">
                 {/* Incomplete tasks  */}
                 <div className="tasks-column">
@@ -31,7 +31,7 @@ const Tasks = () => {
                             {incompleteTasks?.length}
                         </p>
                     </div>
-                    <div className="space-y-3">
+                    <div className="space-y-3 p-2 bg-[#F2F4F7]">
                         {incompleteTasks?.map((item) => <TaskCard task={item} key={item?.id} />)}
                     </div>
                 </div>
@@ -46,7 +46,7 @@ const Tasks = () => {
                             {todoTasks?.length}
                         </p>
                     </div>
-                    <div className="space-y-3">
+                    <div className="space-y-3 p-2 bg-[#F2F4F7]">
                         {todoTasks.map((item) => <TaskCard task={item} key={item?.id} />)}
                     </div>
                 </div>
@@ -61,7 +61,7 @@ const Tasks = () => {
                             {doingTasks?.length}
                         </p>
                     </div>
-                    <div className="space-y-3">
+                    <div className="space-y-3 p-2 bg-[#F2F4F7]">
                         {doingTasks.map((item) => <TaskCard task={item} key={item?.id} />)}
                     </div>
                 </div>
@@ -73,7 +73,7 @@ const Tasks = () => {
                             {underReviewTasks?.length}
                         </p>
                     </div>
-                    <div className="space-y-3">
+                    <div className="space-y-3 p-2 bg-[#F2F4F7]">
                         {underReviewTasks.map((item) => <TaskCard task={item} key={item?.id} />)}
                     </div>
                 </div>
@@ -85,7 +85,7 @@ const Tasks = () => {
                             {completedTasks?.length}
                         </p>
                     </div>
-                    <div className="space-y-3">
+                    <div className="space-y-3 p-2 bg-[#F2F4F7]">
                         {completedTasks.map((item) => <TaskCard task={item} key={item?.id} />)}
                     </div>
                 </div>
@@ -97,7 +97,7 @@ const Tasks = () => {
                             {overdatedTasks?.length}
                         </p>
                     </div>
-                    <div className="space-y-3">
+                    <div className="space-y-3 p-2 bg-[#F2F4F7]">
                         {overdatedTasks.map((item) => <TaskCard task={item} key={item?.id} />)}
                     </div>
                 </div>
