@@ -2,14 +2,18 @@
 @tailwind components;
 @tailwind utilities;
 
-.column-width {
-    @apply w-full min-w-[300px]
+.tasks-column {
+    @apply w-full min-w-[320px] bg-[#F2F4F7] p-2 h-[1000px] overflow-y-auto
 }
 
 .task-column-header {
-    @apply flex sticky top-0 justify-between rounded-md mb-4
+    @apply bg-[#F2F4F7] flex justify-between rounded-md mb-5
 }
 
 .task-count {
     @apply bg-[#E8EEF3] text-black w-6 h-6 grid place-content-center rounded-md text-base font-medium
+}
+
+.user-img {
+    @apply w-6 h-6 rounded-full object-cover object-center
 }

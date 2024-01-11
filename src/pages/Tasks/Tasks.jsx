@@ -19,9 +19,9 @@ const Tasks = () => {
 
     return (
         <div className="overflow-x-auto h-[calc(100vh-40px)] border m-5">
-            <div className="flex flex-nowrap gap-5 p-5">
+            <div className="flex flex-nowrap gap-4 p-5">
                 {/* Incomplete tasks  */}
-                <div className="column-width bg-[#F2F4F7] p-3">
+                <div className="tasks-column">
                     <div className="task-column-header">
                         <div className="flex justify-center items-center gap-2">
                             <div className="w-6 h-6 bg-[#D21010] rounded-l-full"></div>
@@ -36,7 +36,7 @@ const Tasks = () => {
                     </div>
                 </div>
                 {/* To Do tasks  */}
-                <div className="column-width bg-[#F2F4F7] p-3">
+                <div className="tasks-column">
                     <div className="task-column-header">
                         <div className="flex justify-center items-center gap-2">
                             <div className="w-6 h-6 bg-[#00B5FF] rounded-l-full"></div>
@@ -51,7 +51,7 @@ const Tasks = () => {
                     </div>
                 </div>
                 {/* Doing Tasks */}
-                <div className="column-width bg-[#F2F4F7] p-3">
+                <div className="tasks-column">
                     <div className="task-column-header">
                         <div className="flex justify-center items-center gap-2">
                             <div className="w-6 h-6 bg-[#FFE700] rounded-l-full"></div>
@@ -66,7 +66,7 @@ const Tasks = () => {
                     </div>
                 </div>
                 {/* Under Review Tasks  */}
-                <div className="column-width bg-[#F2F4F7] p-3">
+                <div className="tasks-column">
                     <div className="task-column-header">
                         <h1 className="text-base font-medium">Under Review</h1>
                         <p className="task-count">
@@ -78,7 +78,7 @@ const Tasks = () => {
                     </div>
                 </div>
                 {/* Completed Tasks */}
-                <div className="column-width bg-[#F2F4F7] p-3">
+                <div className="tasks-column">
                     <div className="task-column-header">
                         <h1 className="text-base font-medium">Completed</h1>
                         <p className="task-count">
@@ -90,7 +90,7 @@ const Tasks = () => {
                     </div>
                 </div>
                 {/* Overdated Tasks  */}
-                <div className="column-width bg-[#F2F4F7] p-3">
+                <div className="tasks-column">
                     <div className="task-column-header">
                         <h1 className="text-base font-medium">Overdated</h1>
                         <p className="task-count">
