@@ -1,6 +1,20 @@
 import { useEffect, useState } from "react";
 
 const Tasks = () => {
+    const [tasks, setTasks] = useState([])
+
+    useEffect(() => {
+        fetch('/dummyTasks.json')
+            .then(res => res.json())
+            .then(data => setTasks(data))
+    }, [])
+
+    const incompletedTasks = tasks.filter(item => item.status === "Incomplete")
+    const todoTasks = tasks.filter(item => item.status === "To Do")
+    const doingTasks = tasks.filter(item => item.status === "Doing")
+    const underReviewTasks = tasks.filter(item => item.status === "Under Review")
+    const completedTasks = tasks.filter(item => item.status === "Completed")
+    const overdatdTasks = tasks.filter(item => item.status === "Overdated")
 
     return (
         <div className="overflow-x-auto h-[calc(100vh-40px)] border m-5">
@@ -13,7 +27,7 @@ const Tasks = () => {
                             <h1 className="text-lg font-medium">Incomplete</h1>
                         </div>
                         <p className="bg-[#E8EEF3] text-black w-6 h-6 grid place-content-center rounded-md text-lg font-medium">
-                            0
+                            {incompletedTasks?.length}
                         </p>
                     </div>
                     <div className="space-y-3">
@@ -29,7 +43,7 @@ const Tasks = () => {
                             <h1 className="text-lg font-medium">To Do</h1>
                         </div>
                         <p className="bg-[#E8EEF3] text-black w-6 h-6 grid place-content-center rounded-md text-lg font-medium">
-                            0
+                            {todoTasks?.length}
                         </p>
                     </div>
                     <div className="space-y-3">
@@ -45,7 +59,7 @@ const Tasks = () => {
                             <h2 className="text-lg font-medium">Doing</h2>
                         </div>
                         <p className="bg-[#E8EEF3] text-black w-6 h-6 grid place-content-center rounded-md text-lg font-medium">
-                            0
+                            {doingTasks?.length}
                         </p>
                     </div>
                     <div className="space-y-3">
@@ -58,7 +72,7 @@ const Tasks = () => {
                     <div className="flex sticky top-0 justify-between rounded-md mb-4">
                         <h1 className="text-lg font-medium">Under Review</h1>
                         <p className="bg-[#E8EEF3] text-black w-6 h-6 grid place-content-center rounded-md text-lg font-medium">
-                            0
+                            {underReviewTasks?.length}
                         </p>
                     </div>
                     <div className="space-y-3">
@@ -71,7 +85,7 @@ const Tasks = () => {
                     <div className="flex sticky top-0 justify-between rounded-md mb-4">
                         <h1 className="text-lg font-medium">Completed</h1>
                         <p className="bg-[#E8EEF3] text-black w-6 h-6 grid place-content-center rounded-md text-lg font-medium">
-                            0
+                            {completedTasks?.length}
                         </p>
                     </div>
                     <div className="space-y-3">
@@ -84,7 +98,7 @@ const Tasks = () => {
                     <div className="flex sticky top-0 justify-between rounded-md mb-4">
                         <h1 className="text-lg font-medium">Overdated</h1>
                         <p className="bg-[#E8EEF3] text-black w-6 h-6 grid place-content-center rounded-md text-lg font-medium">
-                            0
+                            {overdatdTasks?.length}
                         </p>
                     </div>
                     <div className="space-y-3">
