@@ -5,3 +5,11 @@
 .column-width {
     @apply w-full min-w-[300px]
 }
+
+.task-column-header {
+    @apply flex sticky top-0 justify-between rounded-md mb-4
+}
+
+.task-count {
+    @apply bg-[#E8EEF3] text-black w-6 h-6 grid place-content-center rounded-md text-base font-medium
+}

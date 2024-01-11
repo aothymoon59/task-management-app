@@ -22,12 +22,12 @@ const Tasks = () => {
             <div className="flex flex-nowrap gap-5 p-5">
                 {/* Incomplete tasks  */}
                 <div className="column-width bg-[#F2F4F7] p-3">
-                    <div className="flex sticky top-0 justify-between rounded mb-4">
+                    <div className="task-column-header">
                         <div className="flex justify-center items-center gap-2">
                             <div className="w-6 h-6 bg-[#D21010] rounded-l-full"></div>
                             <h1 className="text-base font-medium">Incomplete</h1>
                         </div>
-                        <p className="bg-[#E8EEF3] text-black w-6 h-6 grid place-content-center rounded-md text-base font-medium">
+                        <p className="task-count">
                             {incompleteTasks?.length}
                         </p>
                     </div>
@@ -37,12 +37,12 @@ const Tasks = () => {
                 </div>
                 {/* To Do tasks  */}
                 <div className="column-width bg-[#F2F4F7] p-3">
-                    <div className="flex sticky top-0 justify-between rounded-md mb-4">
+                    <div className="task-column-header">
                         <div className="flex justify-center items-center gap-2">
                             <div className="w-6 h-6 bg-[#00B5FF] rounded-l-full"></div>
                             <h1 className="text-base font-medium">To Do</h1>
                         </div>
-                        <p className="bg-[#E8EEF3] text-black w-6 h-6 grid place-content-center rounded-md text-base font-medium">
+                        <p className="task-count">
                             {todoTasks?.length}
                         </p>
                     </div>
@@ -52,12 +52,12 @@ const Tasks = () => {
                 </div>
                 {/* Doing Tasks */}
                 <div className="column-width bg-[#F2F4F7] p-3">
-                    <div className="flex sticky top-0 justify-between rounded-md mb-4">
+                    <div className="task-column-header">
                         <div className="flex justify-center items-center gap-2">
                             <div className="w-6 h-6 bg-[#FFE700] rounded-l-full"></div>
                             <h2 className="text-base font-medium">Doing</h2>
                         </div>
-                        <p className="bg-[#E8EEF3] text-black w-6 h-6 grid place-content-center rounded-md text-base font-medium">
+                        <p className="task-count">
                             {doingTasks?.length}
                         </p>
                     </div>
@@ -67,9 +67,9 @@ const Tasks = () => {
                 </div>
                 {/* Under Review Tasks  */}
                 <div className="column-width bg-[#F2F4F7] p-3">
-                    <div className="flex sticky top-0 justify-between rounded-md mb-4">
+                    <div className="task-column-header">
                         <h1 className="text-base font-medium">Under Review</h1>
-                        <p className="bg-[#E8EEF3] text-black w-6 h-6 grid place-content-center rounded-md text-base font-medium">
+                        <p className="task-count">
                             {underReviewTasks?.length}
                         </p>
                     </div>
@@ -79,9 +79,9 @@ const Tasks = () => {
                 </div>
                 {/* Completed Tasks */}
                 <div className="column-width bg-[#F2F4F7] p-3">
-                    <div className="flex sticky top-0 justify-between rounded-md mb-4">
+                    <div className="task-column-header">
                         <h1 className="text-base font-medium">Completed</h1>
-                        <p className="bg-[#E8EEF3] text-black w-6 h-6 grid place-content-center rounded-md text-base font-medium">
+                        <p className="task-count">
                             {completedTasks?.length}
                         </p>
                     </div>
@@ -91,9 +91,9 @@ const Tasks = () => {
                 </div>
                 {/* Overdated Tasks  */}
                 <div className="column-width bg-[#F2F4F7] p-3">
-                    <div className="flex sticky top-0 justify-between rounded-md mb-4">
+                    <div className="task-column-header">
                         <h1 className="text-base font-medium">Overdated</h1>
-                        <p className="bg-[#E8EEF3] text-black w-6 h-6 grid place-content-center rounded-md text-base font-medium">
+                        <p className="task-count">
                             {overdatedTasks?.length}
                         </p>
                     </div>
