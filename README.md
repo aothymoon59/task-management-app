@@ -1,8 +1,8 @@
-# File Management Application with ReactJS
+# Task Management Application with ReactJS
 
 ## Objective:
 
-Develop a file management application using ReactJS that addresses the specified requirements. The application aims to provide an intuitive and responsive user interface for viewing, uploading, and managing files, incorporating features such as a horizontal scrollbar, scrollable cards, attachment modal, and file upload with database integration.
+Develop a task management application using ReactJS that addresses the specified requirements. The application aims to provide an intuitive and responsive user interface for viewing, uploading, and managing files, incorporating features such as a horizontal scrollbar, scrollable cards, attachment modal, and file upload with database integration.
 
 Live URL: https://task-management59.netlify.app/
 
