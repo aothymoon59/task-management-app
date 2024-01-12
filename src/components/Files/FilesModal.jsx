@@ -92,9 +92,8 @@ const FilesModal = ({ taskId, setToggle, toggle }) => {
                                 <p className="text-gray-500 text-sm font-medium">Selected Files:</p>
                                 <ul className="mt-2 border-t border-gray-200 divide-y divide-gray-200">
                                     {Array.from(files).map((file, index) => (
-                                        <li key={index} className="flex justify-between items-center py-2">
-                                            <span className="flex-1 truncate">{file.name}</span>
-                                            <span className="text-gray-500 ml-2">{file.name.split('.').pop()}</span>
+                                        <li key={index} className="py-2">
+                                            <span className="truncate">{file.name}</span>
                                         </li>
                                     ))}
                                 </ul>
