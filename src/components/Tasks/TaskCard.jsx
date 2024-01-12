@@ -23,7 +23,6 @@ const TaskCard = ({ task, setTaskId, toggle }) => {
                 setFiles(response.data);
             } catch (error) {
                 console.error('Error fetching files:', error);
-                // Handle error, show error message, etc.
             }
         };
 

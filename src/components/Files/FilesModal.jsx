@@ -2,6 +2,7 @@ import { useRef, useState } from 'react';
 import { ImCross } from 'react-icons/im';
 import axios from 'axios';
 import toast from 'react-hot-toast';
+import { FiPlus } from "react-icons/fi";
 
 const FilesModal = ({ taskId, setToggle, toggle }) => {
     const [files, setFiles] = useState([]);
@@ -64,22 +65,9 @@ const FilesModal = ({ taskId, setToggle, toggle }) => {
                                 Upload Multiple Files
                             </label>
                             <label
-                                className="flex items-center justify-center h-12 w-full bg-gray-200 rounded-md cursor-pointer"
+                                className="flex items-center justify-center gap-1 h-12 w-full bg-gray-200 rounded-md cursor-pointer"
                             >
-                                <svg
-                                    className="w-6 h-6 mr-2 text-gray-500"
-                                    fill="none"
-                                    stroke="currentColor"
-                                    viewBox="0 0 24 24"
-                                    xmlns="http://www.w3.org/2000/svg"
-                                >
-                                    <path
-                                        strokeLinecap="round"
-                                        strokeLinejoin="round"
-                                        strokeWidth="2"
-                                        d="M12 6v6m0 0v6m0-6h6m-6 0H6"
-                                    ></path>
-                                </svg>
+                                <FiPlus />
                                 <span className="text-gray-700">Choose Files</span>
                                 <input
                                     type="file"
