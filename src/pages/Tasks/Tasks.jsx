@@ -1,14 +1,17 @@
 import { useEffect, useState } from "react";
 import TaskCard from "../../components/Tasks/TaskCard";
+import FilesModal from "../../components/Files/FilesModal";
 
 const Tasks = () => {
     const [tasks, setTasks] = useState([])
+    const [taskId, setTaskId] = useState('');
+    const [toggle, setToggle] = useState(true)
 
     useEffect(() => {
         fetch('/dummyTasks.json')
             .then(res => res.json())
             .then(data => setTasks(data))
-    }, [])
+    }, [toggle])
 
     const incompleteTasks = tasks.filter(item => item.status === "Incomplete")
     const todoTasks = tasks.filter(item => item.status === "To Do")
@@ -32,7 +35,7 @@ const Tasks = () => {
                         </p>
                     </div>
                     <div className="space-y-3 p-2 bg-[#F2F4F7]">
-                        {incompleteTasks?.map((item) => <TaskCard task={item} key={item?.id} />)}
+                        {incompleteTasks?.map((item) => <TaskCard task={item} setTaskId={setTaskId} key={item?.taskId} />)}
                     </div>
                 </div>
                 {/* To Do tasks  */}
@@ -47,7 +50,7 @@ const Tasks = () => {
                         </p>
                     </div>
                     <div className="space-y-3 p-2 bg-[#F2F4F7]">
-                        {todoTasks.map((item) => <TaskCard task={item} key={item?.id} />)}
+                        {todoTasks.map((item) => <TaskCard task={item} setTaskId={setTaskId} key={item?.taskId} />)}
                     </div>
                 </div>
                 {/* Doing Tasks */}
@@ -62,7 +65,7 @@ const Tasks = () => {
                         </p>
                     </div>
                     <div className="space-y-3 p-2 bg-[#F2F4F7]">
-                        {doingTasks.map((item) => <TaskCard task={item} key={item?.id} />)}
+                        {doingTasks.map((item) => <TaskCard task={item} setTaskId={setTaskId} key={item?.taskId} />)}
                     </div>
                 </div>
                 {/* Under Review Tasks  */}
@@ -74,7 +77,7 @@ const Tasks = () => {
                         </p>
                     </div>
                     <div className="space-y-3 p-2 bg-[#F2F4F7]">
-                        {underReviewTasks.map((item) => <TaskCard task={item} key={item?.id} />)}
+                        {underReviewTasks.map((item) => <TaskCard task={item} setTaskId={setTaskId} key={item?.taskId} />)}
                     </div>
                 </div>
                 {/* Completed Tasks */}
@@ -86,7 +89,7 @@ const Tasks = () => {
                         </p>
                     </div>
                     <div className="space-y-3 p-2 bg-[#F2F4F7]">
-                        {completedTasks.map((item) => <TaskCard task={item} key={item?.id} />)}
+                        {completedTasks.map((item) => <TaskCard task={item} setTaskId={setTaskId} key={item?.taskId} />)}
                     </div>
                 </div>
                 {/* Overdated Tasks  */}
@@ -98,10 +101,11 @@ const Tasks = () => {
                         </p>
                     </div>
                     <div className="space-y-3 p-2 bg-[#F2F4F7]">
-                        {overdatedTasks.map((item) => <TaskCard task={item} key={item?.id} />)}
+                        {overdatedTasks.map((item) => <TaskCard task={item} setTaskId={setTaskId} key={item?.taskId} />)}
                     </div>
                 </div>
             </div>
+            <FilesModal taskId={taskId} setToggle={setToggle} toggle={toggle} />
         </div>
 
     );

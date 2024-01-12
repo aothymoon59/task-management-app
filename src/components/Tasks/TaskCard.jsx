@@ -3,10 +3,33 @@ import { PiNotepadFill } from "react-icons/pi";
 import { FaRegComments } from "react-icons/fa";
 import { HiLink } from "react-icons/hi2";
 import { FaCalendarAlt } from "react-icons/fa";
+import { useEffect, useState } from "react";
+import axios from "axios";
 
-const TaskCard = ({ task }) => {
-    console.log(task)
-    const { client, assignedBy, description, assignedTo, comments, date } = task
+const TaskCard = ({ task, setTaskId }) => {
+    const { taskId, client, assignedBy, description, assignedTo, comments, date } = task
+
+    const handleOpenFilesUpload = (id) => {
+        document.getElementById('filesModal').showModal()
+        setTaskId(id)
+    }
+
+    const [files, setFiles] = useState([]);
+
+    useEffect(() => {
+        const fetchFiles = async () => {
+            try {
+                const response = await axios.get(`https://task-management-backend-tan.vercel.app/files/task/${taskId}`);
+                setFiles(response.data);
+            } catch (error) {
+                console.error('Error fetching files:', error);
+                // Handle error, show error message, etc.
+            }
+        };
+
+        fetchFiles();
+    }, [taskId]);
+
     return (
         <div className="bg-white p-2 rounded-md">
             {/* client name and assignee name  */}
@@ -17,7 +40,7 @@ const TaskCard = ({ task }) => {
                 </div>
                 <div className="flex items-center gap-1">
                     <img className="user-img" src={assignedBy?.photoUrl} alt={assignedBy?.name} />
-                    <p className="font-medium text-xs">{assignedBy?.name}</p>
+                    <p className="font-medium text-sm">{assignedBy?.name}</p>
                 </div>
             </div>
             {/* description  */}
@@ -52,10 +75,10 @@ const TaskCard = ({ task }) => {
                 </div>
                 {/* upload files  */}
                 <div className="flex items-center gap-1 text-sm">
-                    <button className="cursor-pointer">
+                    <button title="Upload Files" onClick={() => handleOpenFilesUpload(taskId)} className="cursor-pointer">
                         <HiLink />
                     </button>
-                    <p>25</p>
+                    <p>{files?.length > 0 ? files?.length : 0}</p>
                 </div>
                 {/* date  */}
                 <div className="flex items-center gap-1 text-sm">
