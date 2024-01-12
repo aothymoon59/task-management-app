@@ -6,6 +6,7 @@ import toast from 'react-hot-toast';
 const FilesModal = ({ taskId, setToggle, toggle }) => {
     const [files, setFiles] = useState([]);
     const dialogRef = useRef(null);
+    const [loading, setLoading] = useState(false)
 
     const handleFileChange = (event) => {
         setFiles(event.target.files);
@@ -18,12 +19,13 @@ const FilesModal = ({ taskId, setToggle, toggle }) => {
         }
         formData.append('taskId', taskId);
 
+        setLoading(true)
         try {
-            const response = await axios.post('http://localhost:5000/files', formData);
+            const response = await axios.post('https://task-management-server-27qj.onrender.com/files', formData);
             console.log('Files uploaded successfully:', response.data);
             toast.success('Files uploaded successfully');
             setToggle(!toggle)
-
+            setLoading(false)
             // Reset the file input by clearing its value
             if (dialogRef.current) {
                 const fileInput = dialogRef.current.querySelector('input[type="file"]');
@@ -88,10 +90,13 @@ const FilesModal = ({ taskId, setToggle, toggle }) => {
                             </label>
                         </div>
                         <button
+                            disabled={loading}
                             onClick={handleUpload}
                             className="bg-blue-500 text-white py-2 px-4 rounded-md hover:bg-blue-600"
                         >
-                            Upload
+                            {
+                                loading ? "Uploading..." : "Upload"
+                            }
                         </button>
                         {files.length > 0 && (
                             <div className="mt-4">

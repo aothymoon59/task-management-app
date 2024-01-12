@@ -35,7 +35,7 @@ const Tasks = () => {
                         </p>
                     </div>
                     <div className="space-y-3 p-2 bg-[#F2F4F7]">
-                        {incompleteTasks?.map((item) => <TaskCard task={item} setTaskId={setTaskId} key={item?.taskId} />)}
+                        {incompleteTasks?.map((item) => <TaskCard task={item} setTaskId={setTaskId} key={item?.taskId} toggle={toggle} />)}
                     </div>
                 </div>
                 {/* To Do tasks  */}
@@ -50,7 +50,7 @@ const Tasks = () => {
                         </p>
                     </div>
                     <div className="space-y-3 p-2 bg-[#F2F4F7]">
-                        {todoTasks.map((item) => <TaskCard task={item} setTaskId={setTaskId} key={item?.taskId} />)}
+                        {todoTasks.map((item) => <TaskCard task={item} setTaskId={setTaskId} key={item?.taskId} toggle={toggle} />)}
                     </div>
                 </div>
                 {/* Doing Tasks */}
@@ -65,7 +65,7 @@ const Tasks = () => {
                         </p>
                     </div>
                     <div className="space-y-3 p-2 bg-[#F2F4F7]">
-                        {doingTasks.map((item) => <TaskCard task={item} setTaskId={setTaskId} key={item?.taskId} />)}
+                        {doingTasks.map((item) => <TaskCard task={item} setTaskId={setTaskId} key={item?.taskId} toggle={toggle} />)}
                     </div>
                 </div>
                 {/* Under Review Tasks  */}
@@ -77,7 +77,7 @@ const Tasks = () => {
                         </p>
                     </div>
                     <div className="space-y-3 p-2 bg-[#F2F4F7]">
-                        {underReviewTasks.map((item) => <TaskCard task={item} setTaskId={setTaskId} key={item?.taskId} />)}
+                        {underReviewTasks.map((item) => <TaskCard task={item} setTaskId={setTaskId} key={item?.taskId} toggle={toggle} />)}
                     </div>
                 </div>
                 {/* Completed Tasks */}
@@ -89,7 +89,7 @@ const Tasks = () => {
                         </p>
                     </div>
                     <div className="space-y-3 p-2 bg-[#F2F4F7]">
-                        {completedTasks.map((item) => <TaskCard task={item} setTaskId={setTaskId} key={item?.taskId} />)}
+                        {completedTasks.map((item) => <TaskCard task={item} setTaskId={setTaskId} key={item?.taskId} toggle={toggle} />)}
                     </div>
                 </div>
                 {/* Overdated Tasks  */}
@@ -101,7 +101,7 @@ const Tasks = () => {
                         </p>
                     </div>
                     <div className="space-y-3 p-2 bg-[#F2F4F7]">
-                        {overdatedTasks.map((item) => <TaskCard task={item} setTaskId={setTaskId} key={item?.taskId} />)}
+                        {overdatedTasks.map((item) => <TaskCard task={item} setTaskId={setTaskId} key={item?.taskId} toggle={toggle} />)}
                     </div>
                 </div>
             </div>

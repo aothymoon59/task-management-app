@@ -6,7 +6,7 @@ import { FaCalendarAlt } from "react-icons/fa";
 import { useEffect, useState } from "react";
 import axios from "axios";
 
-const TaskCard = ({ task, setTaskId }) => {
+const TaskCard = ({ task, setTaskId, toggle }) => {
     const { taskId, client, assignedBy, description, assignedTo, comments, date } = task
 
     const handleOpenFilesUpload = (id) => {
@@ -19,7 +19,7 @@ const TaskCard = ({ task, setTaskId }) => {
     useEffect(() => {
         const fetchFiles = async () => {
             try {
-                const response = await axios.get(`https://task-management-backend-tan.vercel.app/files/task/${taskId}`);
+                const response = await axios.get(`https://task-management-server-27qj.onrender.com/files/task/${taskId}`);
                 setFiles(response.data);
             } catch (error) {
                 console.error('Error fetching files:', error);
@@ -28,7 +28,7 @@ const TaskCard = ({ task, setTaskId }) => {
         };
 
         fetchFiles();
-    }, [taskId]);
+    }, [taskId, toggle]);
 
     return (
         <div className="bg-white p-2 rounded-md">
