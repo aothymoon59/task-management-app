@@ -42,6 +42,7 @@ const FilesModal = ({ taskId, setToggle, toggle }) => {
         } catch (error) {
             console.error('Error uploading files:', error);
             toast.error('Failed to upload files');
+            setLoading(false)
         }
     };
 
